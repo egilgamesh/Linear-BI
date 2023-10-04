@@ -176,6 +176,6 @@ public class RelationTests
 
 		// Assert
 		const string ExpectedSqlQuery = "SELECT employee.department_id, department.department_name, MAX(employee.salary) AS employee_max_salary FROM employee JOIN department ON employee.department_id = department.department_id GROUP BY department.department_id, department.department_name";
-		Assert.That(sqlQuery, Is.EqualTo(ExpectedSqlQuery));
+		Assert.That(sqlQuery, Is.EqualTo(ExpectedSqlQuery), sqlQuery);
 	}
 }

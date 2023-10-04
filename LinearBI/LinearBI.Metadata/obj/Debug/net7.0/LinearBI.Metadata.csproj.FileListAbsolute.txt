@@ -10,3 +10,15 @@ C:\Users\malsaedi\Documents\Projects\CGS\Linear BI\LinearBI\LinearBI.Metadata\ob
 C:\Users\malsaedi\Documents\Projects\CGS\Linear BI\LinearBI\LinearBI.Metadata\obj\Debug\net7.0\LinearBI.Metadata.pdb
 C:\Users\malsaedi\Documents\Projects\CGS\Linear BI\LinearBI\LinearBI.Metadata\obj\Debug\net7.0\ref\LinearBI.Metadata.dll
 C:\Users\malsaedi\Documents\Projects\CGS\Linear BI\LinearBI\LinearBI.Metadata\obj\Debug\net7.0\LinearBI.Metadata.csproj.AssemblyReference.cache
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.Metadata\bin\Debug\net7.0\LinearBI.Metadata.deps.json
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.Metadata\bin\Debug\net7.0\LinearBI.Metadata.dll
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.Metadata\bin\Debug\net7.0\LinearBI.Metadata.pdb
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.Metadata\obj\Debug\net7.0\LinearBI.Metadata.csproj.AssemblyReference.cache
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.Metadata\obj\Debug\net7.0\LinearBI.Metadata.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.Metadata\obj\Debug\net7.0\LinearBI.Metadata.AssemblyInfoInputs.cache
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.Metadata\obj\Debug\net7.0\LinearBI.Metadata.AssemblyInfo.cs
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.Metadata\obj\Debug\net7.0\LinearBI.Metadata.csproj.CoreCompileInputs.cache
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.Metadata\obj\Debug\net7.0\LinearBI.Metadata.dll
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.Metadata\obj\Debug\net7.0\refint\LinearBI.Metadata.dll
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.Metadata\obj\Debug\net7.0\LinearBI.Metadata.pdb
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.Metadata\obj\Debug\net7.0\ref\LinearBI.Metadata.dll

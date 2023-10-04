@@ -1006,11 +1006,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear BI\\LinearBI\\LinearBI.Tests\\LinearBI.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear-BI\\LinearBI\\LinearBI.Tests\\LinearBI.Tests.csproj",
       "projectName": "LinearBI.Tests",
-      "projectPath": "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear BI\\LinearBI\\LinearBI.Tests\\LinearBI.Tests.csproj",
+      "projectPath": "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear-BI\\LinearBI\\LinearBI.Tests\\LinearBI.Tests.csproj",
       "packagesPath": "C:\\Users\\malsaedi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear BI\\LinearBI\\LinearBI.Tests\\obj\\",
+      "outputPath": "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear-BI\\LinearBI\\LinearBI.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1032,8 +1032,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear BI\\LinearBI\\LinearBI.Metadata\\LinearBI.Metadata.csproj": {
-              "projectPath": "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear BI\\LinearBI\\LinearBI.Metadata\\LinearBI.Metadata.csproj"
+            "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear-BI\\LinearBI\\LinearBI.Metadata\\LinearBI.Metadata.csproj": {
+              "projectPath": "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear-BI\\LinearBI\\LinearBI.Metadata\\LinearBI.Metadata.csproj"
             }
           }
         }

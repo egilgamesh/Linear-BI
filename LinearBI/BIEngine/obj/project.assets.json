@@ -475,11 +475,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear BI\\LinearBI\\BIEngine\\BIEngine.csproj",
+      "projectUniqueName": "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear-BI\\LinearBI\\BIEngine\\BIEngine.csproj",
       "projectName": "BIEngine",
-      "projectPath": "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear BI\\LinearBI\\BIEngine\\BIEngine.csproj",
+      "projectPath": "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear-BI\\LinearBI\\BIEngine\\BIEngine.csproj",
       "packagesPath": "C:\\Users\\malsaedi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear BI\\LinearBI\\BIEngine\\obj\\",
+      "outputPath": "C:\\Users\\malsaedi\\Documents\\Projects\\CGS\\Linear-BI\\LinearBI\\BIEngine\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -86,7 +86,7 @@ public class RelationTests
                 ""aggregate_columns"": [
                     {
                         ""name"": ""max_salary"",
-                        ""expression"": ""MAX(salary)"",
+                        ""expression"": ""MAX(employee.salary)"",
                         ""type"": ""DECIMAL""
                     }
                 ]

@@ -22,7 +22,7 @@ public class ReportGenerator
 		//Remove the trailing comma and space
 		if (query.Length > 7)
 			query.Remove(query.Length - 2, 2);
-		AddAggregateColumns(tables, selectedTables, query);
+		AddAggregateColumns(tables, selectedTables, query, selectedColumnsByTable);
 
 		// Add "FROM" keyword after the list of selected columns
 		query.Append(" FROM ");
@@ -76,8 +76,10 @@ public class ReportGenerator
 
 	// ReSharper disable once TooManyDeclarations
 	private static void AddAggregateColumns(List<Table> tables, List<string> selectedTables,
-		StringBuilder query)
+		StringBuilder query, Dictionary<string, List<string>> selectedColumnsByTable)
 	{
+		if (selectedColumnsByTable.Count > 0)
+			query?.Append(", ");
 		if (tables.All(table => table.aggregate_columns.Count == 0))
 			return;
 		foreach (var selectedTable in selectedTables)
@@ -91,6 +93,7 @@ public class ReportGenerator
 				}_{
 					aggregateColumn.name
 				}, ");
+			query.Remove(query.Length - 2, 2);
 		}
 	}
 }

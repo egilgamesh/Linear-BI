@@ -14,13 +14,6 @@ public class Program
 		listener.Prefixes.Add(WebServer); // Set your desired URL and port
 		listener.Start();
 		Console.WriteLine("Server is running...");
-		//routeHandlers = new Dictionary<string, Func<HttpListenerContext, Task>>
-		//{
-		//	{ "/home", (context) => RenderContent(context, ReportsPath + "home.html", 200) },
-		//	{ "/about", (context) => RenderContent(context, ReportsPath + "about.html", 200) },
-		//	{ "/notfound", (context) => RenderContent(context, "notfound.html", 404) },
-		//	// Add more routes and content functions here
-		//};
 		routeHandlers = new Dictionary<string, Func<HttpListenerContext, Task>>();
 
 		// Scan the directory for HTML files and generate route handlers
@@ -41,6 +34,7 @@ public class Program
 	private const string ServerAddress = "http://localhost";
 	const string WebServer = ServerAddress + Port;
 	private static Dictionary<string, Func<HttpListenerContext, Task>>? routeHandlers;
+	private const string CompanyTitle = "CGS";
 
 	static async Task ProcessRequestAsync(HttpListenerContext context,
 		IReadOnlyDictionary<string, Func<HttpListenerContext, Task>> reportsRouteHandlers)
@@ -52,25 +46,33 @@ public class Program
 			await handler(context).ConfigureAwait(false);
 		}
 		else
-		{
 			await RenderContent(context, "notfound.html", 404).ConfigureAwait(false);
-		}
 	}
 
 	static async Task RenderContent(HttpListenerContext context, string fileName,
 		int statusCode)
 	{
 		context.Response.StatusCode = statusCode;
-		var navigationLinks = GenerateNavigationLinks(routeHandlers.Keys);
-		var template = await File.ReadAllTextAsync("layout.html").ConfigureAwait(false);
-		var content = await File.ReadAllTextAsync(fileName).ConfigureAwait(false);
-		template = template.Replace("{{content}}", content);
-		template = template.Replace("{{navigation}}", navigationLinks);
+		var navigationLinks = GenerateNavigationLinks(routeHandlers!.Keys);
+		var template = await ReplaceLayoutPagePlaceHolderContent(fileName, navigationLinks).
+			ConfigureAwait(false);
 		var buffer = Encoding.UTF8.GetBytes(template);
 		context.Response.ContentLength64 = buffer.Length;
 		var output = context.Response.OutputStream;
 		await output.WriteAsync(buffer, 0, buffer.Length).ConfigureAwait(false);
 		output.Close();
+	}
+
+	private static async Task<string> ReplaceLayoutPagePlaceHolderContent(string fileName,
+		string navigationLinks)
+	{
+		var template = await File.ReadAllTextAsync("layout.html").ConfigureAwait(false);
+		var content = await File.ReadAllTextAsync(fileName).ConfigureAwait(false);
+		template = template.Replace("{{content}}", content);
+		template = template.Replace("{{navigation}}", navigationLinks);
+		template = template.Replace("{{CompanyTitle}}", CompanyTitle);
+		template = template.Replace("{{year}}", DateTime.Now.Year.ToString());
+		return template;
 	}
 
 	private static string GenerateNavigationLinks(IEnumerable<string> routes)

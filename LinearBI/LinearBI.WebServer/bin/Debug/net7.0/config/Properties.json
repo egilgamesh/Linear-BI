@@ -1,0 +1,6 @@
+{
+  "ReportsPath": "Reports/",
+  "Port": ":8090",
+  "ServerAddress": "http://localhost",
+  "CompanyTitle": "CGS"
+}

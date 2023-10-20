@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Text;
+using System.Text.Json;
 
 namespace LinearBI.WebServer;
 
@@ -8,16 +9,19 @@ public class Program
 	// ReSharper disable once ArrangeTypeMemberModifiers
 
 	// ReSharper disable once TooManyDeclarations
+	// ReSharper disable once MethodTooLong
 	public static async Task Main(string[] args)
 	{
+		ReadConfigurationFile();
 		var listener = new HttpListener();
-		listener.Prefixes.Add(WebServer); // Set your desired URL and port
+
+		listener.Prefixes.Add(webServer); // Set your desired URL and port
 		listener.Start();
 		Console.WriteLine("Server is running...");
 		routeHandlers = new Dictionary<string, Func<HttpListenerContext, Task>>();
 
 		// Scan the directory for HTML files and generate route handlers
-		foreach (var file in Directory.GetFiles(ReportsPath, "*.html"))
+		foreach (var file in Directory.GetFiles(reportsPath, "*.html"))
 		{
 			var route = "/" + Path.GetFileNameWithoutExtension(file);
 			routeHandlers[route] = (context) => RenderContent(context, file, 200);
@@ -29,12 +33,23 @@ public class Program
 		}
 	}
 
-	const string ReportsPath = "Reports/";
-	private const string Port = ":8080/";
-	private const string ServerAddress = "http://localhost";
-	const string WebServer = ServerAddress + Port;
+	private static void ReadConfigurationFile()
+	{
+		var configText = File.ReadAllText("config/Properties.json");
+		var config = JsonSerializer.Deserialize<ConfigurationSetting>(configText);
+		reportsPath = config!.ReportsPath;
+		port = config.Port;
+		serverAddress = config.ServerAddress;
+		companyTitle = config.CompanyTitle;
+		webServer = serverAddress + port + "/";
+	}
+
+	static string reportsPath = "";
+	private static string port = "";
+	private static string serverAddress = "";
+	private static string companyTitle = "";
 	private static Dictionary<string, Func<HttpListenerContext, Task>>? routeHandlers;
-	private const string CompanyTitle = "CGS";
+	private static string? webServer;
 
 	static async Task ProcessRequestAsync(HttpListenerContext context,
 		IReadOnlyDictionary<string, Func<HttpListenerContext, Task>> reportsRouteHandlers)
@@ -70,7 +85,7 @@ public class Program
 		var content = await File.ReadAllTextAsync(fileName).ConfigureAwait(false);
 		template = template.Replace("{{content}}", content);
 		template = template.Replace("{{navigation}}", navigationLinks);
-		template = template.Replace("{{CompanyTitle}}", CompanyTitle);
+		template = template.Replace("{{CompanyTitle}}", companyTitle);
 		template = template.Replace("{{year}}", DateTime.Now.Year.ToString());
 		return template;
 	}

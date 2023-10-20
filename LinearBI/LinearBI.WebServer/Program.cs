@@ -10,17 +10,14 @@ public class Program
 	public static async Task Main(string[] args)
 	{
 		var listener = new HttpListener();
-		listener.Prefixes.Add($"http://localhost:8080/"); // Set your desired URL and port
+		listener.Prefixes.Add("http://localhost:8080/"); // Set your desired URL and port
 		listener.Start();
 		Console.WriteLine("Server is running...");
 		var routeHandlers = new Dictionary<string, Func<HttpListenerContext, Task>>
 		{
-			{ "/home", (context) => RenderContent(context, GetContent("Home"), 200) },
-			{
-				"/about",
-				(context) => RenderContent(context, "Learn about us on the About Page!", 200)
-			},
-			{ "/notfound", (context) => RenderContent(context, "404 - Not Found", 404) },
+			{ "/home", (context) => RenderContent(context, "home.html", 200) },
+			{ "/about", (context) => RenderContent(context, "about.html", 200) },
+			{ "/notfound", (context) => RenderContent(context, "notfound.html", 404) },
 			// Add more routes and content functions here
 		};
 		while (true)
@@ -41,14 +38,17 @@ public class Program
 		}
 		else
 		{
-			await RenderContent(context, "404 - Not Found", 404).ConfigureAwait(false);
+			await RenderContent(context, "notfound.html", 404).ConfigureAwait(false);
 		}
 	}
 
-	static async Task RenderContent(HttpListenerContext context, string content, int statusCode)
+	static async Task RenderContent(HttpListenerContext context, string fileName, int statusCode)
 	{
 		context.Response.StatusCode = statusCode;
-		var buffer = Encoding.UTF8.GetBytes(content);
+		var template = await File.ReadAllTextAsync("layout.html").ConfigureAwait(false);
+		var content = await File.ReadAllTextAsync(fileName).ConfigureAwait(false);
+		template = template.Replace("{{content}}", content);
+		var buffer = Encoding.UTF8.GetBytes(template);
 		context.Response.ContentLength64 = buffer.Length;
 		var output = context.Response.OutputStream;
 		await output.WriteAsync(buffer, 0, buffer.Length).ConfigureAwait(false);

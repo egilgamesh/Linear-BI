@@ -1,7 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BI 360</title>
+<style>
+        html, body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    nav {
+        background-color: #C0D6E4;
+        text-align: center; /* Center the list items horizontally */
+        padding: 0;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex; /* Make the list items display horizontally */
+    }
+
+    nav li {
+        margin: 0 15px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #333; /* Change link text color */
+    }
+
+       footer {
+            background-color: #333;
+            color: #fff;
+            text-align: right; /* Align the text to the right */
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+</style>
 </head>
 <body>
     <header>
@@ -12,11 +58,11 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
         {{content}}
     </main>
-    
+
     <footer>
         <p>&copy; {{year}} {{CompanyTitle}}</p>
     </footer>

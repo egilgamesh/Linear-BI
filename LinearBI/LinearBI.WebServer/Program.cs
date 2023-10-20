@@ -11,18 +11,24 @@ public class Program
 	public static async Task Main(string[] args)
 	{
 		var listener = new HttpListener();
-		var webServer = ServerAddress + Port;
-		listener.Prefixes.Add(webServer); // Set your desired URL and port
+		listener.Prefixes.Add(WebServer); // Set your desired URL and port
 		listener.Start();
-		const string ReportsPath = "Reports/";
 		Console.WriteLine("Server is running...");
-		routeHandlers = new Dictionary<string, Func<HttpListenerContext, Task>>
+		//routeHandlers = new Dictionary<string, Func<HttpListenerContext, Task>>
+		//{
+		//	{ "/home", (context) => RenderContent(context, ReportsPath + "home.html", 200) },
+		//	{ "/about", (context) => RenderContent(context, ReportsPath + "about.html", 200) },
+		//	{ "/notfound", (context) => RenderContent(context, "notfound.html", 404) },
+		//	// Add more routes and content functions here
+		//};
+		routeHandlers = new Dictionary<string, Func<HttpListenerContext, Task>>();
+
+		// Scan the directory for HTML files and generate route handlers
+		foreach (var file in Directory.GetFiles(ReportsPath, "*.html"))
 		{
-			{ "/home", (context) => RenderContent(context, ReportsPath + "home.html", 200) },
-			{ "/about", (context) => RenderContent(context, ReportsPath + "about.html", 200) },
-			{ "/notfound", (context) => RenderContent(context, "notfound.html", 404) },
-			// Add more routes and content functions here
-		};
+			var route = "/" + Path.GetFileNameWithoutExtension(file);
+			routeHandlers[route] = (context) => RenderContent(context, file, 200);
+		}
 		while (true)
 		{
 			var context = await listener.GetContextAsync().ConfigureAwait(false);
@@ -30,8 +36,10 @@ public class Program
 		}
 	}
 
+	const string ReportsPath = "Reports/";
 	private const string Port = ":8080/";
 	private const string ServerAddress = "http://localhost";
+	const string WebServer = ServerAddress + Port;
 	private static Dictionary<string, Func<HttpListenerContext, Task>>? routeHandlers;
 
 	static async Task ProcessRequestAsync(HttpListenerContext context,

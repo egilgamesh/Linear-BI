@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinearBI.Tests", "LinearBI.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BIEngine", "BIEngine\BIEngine.csproj", "{C3089678-6DB3-4AF9-9A80-F6F1F9DC3362}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinearBI.WebServer", "LinearBI.WebServer\LinearBI.WebServer.csproj", "{7B1FBE12-427D-4E63-9486-495D5F1113A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C3089678-6DB3-4AF9-9A80-F6F1F9DC3362}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3089678-6DB3-4AF9-9A80-F6F1F9DC3362}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3089678-6DB3-4AF9-9A80-F6F1F9DC3362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B1FBE12-427D-4E63-9486-495D5F1113A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B1FBE12-427D-4E63-9486-495D5F1113A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B1FBE12-427D-4E63-9486-495D5F1113A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B1FBE12-427D-4E63-9486-495D5F1113A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,14 @@
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.WebServer\bin\Debug\net7.0\LinearBI.WebServer.exe
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.WebServer\bin\Debug\net7.0\LinearBI.WebServer.deps.json
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.WebServer\bin\Debug\net7.0\LinearBI.WebServer.runtimeconfig.json
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.WebServer\bin\Debug\net7.0\LinearBI.WebServer.dll
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.WebServer\bin\Debug\net7.0\LinearBI.WebServer.pdb
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.WebServer\obj\Debug\net7.0\LinearBI.WebServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.WebServer\obj\Debug\net7.0\LinearBI.WebServer.AssemblyInfoInputs.cache
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.WebServer\obj\Debug\net7.0\LinearBI.WebServer.AssemblyInfo.cs
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.WebServer\obj\Debug\net7.0\LinearBI.WebServer.csproj.CoreCompileInputs.cache
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.WebServer\obj\Debug\net7.0\LinearBI.WebServer.dll
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.WebServer\obj\Debug\net7.0\refint\LinearBI.WebServer.dll
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.WebServer\obj\Debug\net7.0\LinearBI.WebServer.pdb
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.WebServer\obj\Debug\net7.0\LinearBI.WebServer.genruntimeconfig.cache
+C:\Users\malsaedi\Documents\Projects\CGS\Linear-BI\LinearBI\LinearBI.WebServer\obj\Debug\net7.0\ref\LinearBI.WebServer.dll

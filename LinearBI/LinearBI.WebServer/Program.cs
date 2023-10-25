@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Data;
+using System.Net;
 using System.Text;
 using System.Text.Json;
 
@@ -14,8 +15,7 @@ public class Program
 	{
 		ReadConfigurationFile();
 		var listener = new HttpListener();
-
-		listener.Prefixes.Add(webServer); // Set your desired URL and port
+		listener.Prefixes.Add(webServer!); // Set your desired URL and port
 		listener.Start();
 		Console.WriteLine("Server is running...");
 		routeHandlers = new Dictionary<string, Func<HttpListenerContext, Task>>();

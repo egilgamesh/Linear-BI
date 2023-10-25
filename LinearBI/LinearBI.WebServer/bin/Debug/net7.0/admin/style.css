@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  #toolbox {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+
+  #editor {
+    margin-left: 320px;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+  }
+
+  button {
+    display: block;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 175px;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  #chartOptions,
+  #tableOptions {
+    display: none;
+    padding: 10px;
+    margin-left: 320px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+
+  table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+
+
+  /*drag*/
+
+  /* Add this style for chart boxes */
+  .chart-box {
+    position: absolute;
+    border: 2px dashed #000;
+    cursor: move;
+  }
+
+/* Existing CSS styles for charts go here */
+
+/* Example style for a pie chart */
+.chart.pie-chart {
+  background-color: lightblue;
+  border-radius: 50%;
+}
+
+.chart-card {
+  width: 600px;
+  height: 400px;
+  background-color: #fff; /* Background color of the card */
+  border: 1px solid #ccc; /* Border color */
+  border-radius: 8px; /* Rounded corners for the card */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  margin: 10px; /* Margin around the card */
+}
+
+#chartContainer {
+  position: relative;
+  display: inline-block; /* Ensures the container only takes the necessary space */
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WYSIWYG Chart and Table Editor</title>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div id="toolbox" class="toolbox">
+    <h2>Toolbox</h2>
+    <button onclick="addChart('bar')">Bar Chart</button>
+    <button onclick="addChart('line')">Line Chart</button>
+    <button onclick="addChart('pie')">Pie Chart</button>
+    <button onclick="addChart('clusteredBar')">Clustered Bar Chart</button>
+    <button onclick="addChart('stackedBar')">Stacked Bar Chart</button>
+    <button onclick="addChart('treemap')">Treemap</button>
+    <button onclick="addTable()">Table</button>
+    <button onclick="saveAsHTML()">Save</button>
+  </div>
+  <div contenteditable="true" id="editor"></div>
+  <div id="chartOptions">
+    <label for="chartType">Chart Type:</label>
+    <select id="chartType">
+      <option value="bar">Bar Chart</option>
+      <option value="line">Line Chart</option>
+      <option value="pie">Pie Chart</option>
+      <option value="clusteredBar">Clustered Bar Chart</option>
+      <option value="stackedBar">Stacked Bar Chart</option>
+      <option value="treemap">Treemap</option>
+    </select>
+    <label for="apiURL">API URL:</label>
+    <input type="text" id="apiURL" value="https://jsonplaceholder.typicode.com/posts">
+    <button onclick="customizeChart()">Apply Chart</button>
+  </div>
+  <div id="tableOptions">
+    <label for="tableAPIURL">API URL for Table Data:</label>
+    <input type="text" id="tableAPIURL" value="https://jsonplaceholder.typicode.com/users">
+    <button onclick="insertTable()">Insert Table</button>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+</html>
